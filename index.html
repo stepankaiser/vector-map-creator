@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vector Map Creator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v4.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>🗺️ Vector Map Creator</h1>
+            <p>Create beautiful vector maps for your presentations</p>
+        </header>
+
+        <div class="main-content">
+            <div class="control-panel">
+                <div class="control-section">
+                    <h3>📍 Select Region</h3>
+                    <select id="regionSelect" class="control-input">
+                        <option value="world">World</option>
+                        <option value="continents">Continents</option>
+                        <option value="europe">Europe</option>
+                        <option value="asia">Asia</option>
+                        <option value="africa">Africa</option>
+                        <option value="north-america">North America</option>
+                        <option value="south-america">South America</option>
+                        <option value="oceania">Oceania</option>
+                    </select>
+                </div>
+
+                <div class="control-section">
+                    <h3>🎨 Map Style</h3>
+                    <div class="color-controls">
+                        <label for="fillColor">Fill Color:</label>
+                        <input type="color" id="fillColor" value="#4a90e2" class="color-picker">
+                        
+                        <label for="strokeColor">Border Color:</label>
+                        <input type="color" id="strokeColor" value="#2c3e50" class="color-picker">
+                        
+                        <label for="strokeWidth">Border Width:</label>
+                        <input type="range" id="strokeWidth" min="0" max="5" value="1" step="0.5" class="slider">
+                        <span id="strokeWidthValue">1px</span>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>🔧 Options</h3>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="showLabels" checked>
+                            <span class="checkmark"></span>
+                            Show Country Labels
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="showGraticule">
+                            <span class="checkmark"></span>
+                            Show Grid Lines
+                        </label>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>📱 Projection</h3>
+                    <select id="projectionSelect" class="control-input">
+                        <option value="Natural Earth">Natural Earth</option>
+                        <option value="Mercator">Mercator</option>
+                        <option value="Robinson">Robinson</option>
+                        <option value="Orthographic">Globe View</option>
+                    </select>
+                </div>
+
+                <div class="control-section">
+                    <h3>🎯 Selection</h3>
+                    <div class="selection-buttons">
+                        <button id="selectAll" class="btn btn-secondary">Select All Visible</button>
+                        <button id="clearSelection" class="btn btn-secondary">Clear Selection</button>
+                    </div>
+                    <p class="selection-info">Click countries to select them. Only selected countries will be exported.</p>
+                </div>
+
+                <div class="control-section">
+                    <h3>💾 Export Selected</h3>
+                    <div class="export-buttons">
+                        <button id="exportSVG" class="btn btn-primary">Export SVG</button>
+                        <button id="exportPNG" class="btn btn-secondary">Export PNG</button>
+                    </div>
+                    <p class="export-info">Exports only selected countries without background.</p>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <div id="map-canvas">
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        <p>Loading map data...</p>
+                    </div>
+                </div>
+                <div class="map-info">
+                    <p>Click and drag to pan • Scroll to zoom</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
