@@ -1,62 +1,64 @@
-# 🗺️ Vector Map Creator
+# Vector Map Creator
 
-A modern web application for creating beautiful vector maps for presentations and visualizations.
+**Interactive web app for creating beautiful vector maps for presentations and visualizations.**
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![D3.js](https://img.shields.io/badge/D3.js-v7-orange.svg)](https://d3js.org/)
+
+---
 
 ## Features
 
-- **Interactive Map Creation**: Create stunning vector maps with just a few clicks
-- **Multiple Projections**: Choose from Natural Earth, Mercator, Robinson, and Globe view
-- **Customizable Styling**: Adjust colors, borders, and visual appearance
-- **Export Options**: Download as SVG (vector) or PNG (raster) formats
-- **Responsive Design**: Works on desktop, tablet, and mobile devices
-- **Zoom & Pan**: Interactive navigation with mouse/touch controls
+- Interactive map creation with real-time preview
+- Four map projections: Natural Earth, Mercator, Robinson, and Globe
+- Customizable styling including fill colors, border colors, and stroke widths
+- Region filtering by continent and sub-region
+- Smooth zoom and pan navigation
+- Export to SVG and PNG formats
+- Zero build tools required - runs directly in the browser
 
-## How to Use
+## Quick Start
 
-1. **Open the App**: Simply open `index.html` in your web browser
-2. **Select Region**: Choose from World, Continents, or specific regions
-3. **Customize Style**: 
-   - Pick fill and border colors
-   - Adjust border width
-   - Toggle country labels and grid lines
-4. **Choose Projection**: Select the map projection that best fits your needs
-5. **Export**: Download your map as SVG (for presentations) or PNG (for images)
+```bash
+git clone https://github.com/stepankaiser/vector-map-creator.git
+cd vector-map-creator
+```
 
-## Technical Details
+Open `index.html` in your browser. That's it - no install, no build step, no dependencies to manage.
 
-- **Pure Web Technologies**: HTML5, CSS3, JavaScript (ES6+)
-- **Mapping Library**: D3.js for vector graphics and geographic projections
-- **Data Source**: Natural Earth geographic data via CDN
-- **Export Formats**: SVG (vector), PNG (raster)
-- **No Installation**: Runs directly in your browser
+## Tech Stack
 
-## Getting Started
+| Technology | Purpose |
+|---|---|
+| HTML5 / CSS3 | Structure and styling |
+| ES6+ JavaScript | Application logic (vanilla, no frameworks) |
+| D3.js v7 | Map rendering and interaction |
+| D3 Geo Projection v4 | Extended projection support |
+| TopoJSON v3 | Efficient geographic data format |
+| Natural Earth | World map data (loaded via CDN) |
 
-1. Clone or download this repository
-2. Open `index.html` in any modern web browser
-3. Start creating beautiful maps!
+## Supported Projections
+
+- **Natural Earth** - a pseudocylindrical projection with a natural, balanced look
+- **Mercator** - the classic conformal projection familiar from web maps
+- **Robinson** - a compromise projection widely used in atlases
+- **Globe** - an orthographic projection showing the Earth as a sphere
+
+## Export Options
+
+- **SVG** - scalable vector output, ideal for print materials, presentations, and further editing in tools like Illustrator or Inkscape
+- **PNG** - raster output suitable for embedding in web pages, documents, and social media
 
 ## Browser Compatibility
 
-- Chrome 60+
-- Firefox 55+
+Vector Map Creator works in all modern browsers that support ES6+ and SVG:
+
+- Chrome 61+
+- Firefox 60+
 - Safari 12+
 - Edge 79+
 
-## Use Cases
+## License
 
-- **Business Presentations**: Create professional-looking maps for reports
-- **Educational Materials**: Illustrate geographic concepts
-- **Marketing Materials**: Show global presence or regional data
-- **Academic Papers**: Include publication-ready vector maps
-- **Web Design**: Generate map graphics for websites
-
-## Tips for Best Results
-
-- Use SVG export for presentations and print materials (infinite scalability)
-- Use PNG export for web use or when you need raster format
-- Natural Earth projection is best for world maps
-- Mercator is familiar but distorts polar regions
-- Globe view is great for showing specific hemispheres
-
-Enjoy creating beautiful vector maps! 🎨 
+This project is licensed under the [MIT License](LICENSE).
